@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * author: ZiChangHong
@@ -41,7 +42,7 @@ public class PaymentController {
     }
 
     @GetMapping("getById/{id}")
-    public CommonResult<Payment> create(@PathVariable("id") Long id) {
+    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
         Payment result = paymentService.getPaymentById(id);
         log.info("查询结果：{}, 3366", result);
         if (result != null) {
@@ -66,4 +67,20 @@ public class PaymentController {
 
         return this.discoveryClient;
     }
+
+    @GetMapping(value = "lb")
+    public String getPaymentLB() {
+        return serverPort;
+    }
+
+    @GetMapping("getTimeOut")
+    public String getTimeOut(){
+        try{
+            TimeUnit.SECONDS.sleep(3);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
+
 }
