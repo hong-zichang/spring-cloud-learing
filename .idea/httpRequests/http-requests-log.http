@@ -1,0 +1,16 @@
+GET http://localhost:8001/payment/getById/1
+
+<> 2022-10-09T182702.404.json
+
+###
+
+GET http://localhost:8001/payment/getById/1
+
+<> 2022-10-09T182559.404.json
+
+###
+
+GET http://localhost:8001/payment/getById/{id}
+
+###
+

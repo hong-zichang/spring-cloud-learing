@@ -1,0 +1,7 @@
+{
+  "timestamp": "2022-10-09T10:25:59.379+0000",
+  "status": 404,
+  "error": "Not Found",
+  "message": "No message available",
+  "path": "/payment/getById/1"
+}
